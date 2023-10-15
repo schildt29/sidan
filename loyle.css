@@ -30,8 +30,9 @@ nav {
     margin-bottom: 10px;
     display: flex;
     height: 60px;
-    gap: 7px;
+    gap: 8px;
 }
+
 
 nav a {
     background-color: rgba(181, 179, 179, 0.4);
