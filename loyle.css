@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    background-image: url(Images/backgroundloyle.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+
+}
+
+main {
+    height: 1000px;
+    width: 80vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 100px;
+    border-radius: 20px;
+}
+
+
+header {
+    display: flex;
+    font-size: 64px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+
+}
+
+nav {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    height: 60px;
+    gap: 7px;
+}
+
+nav a {
+    background-color: rgba(181, 179, 179, 0.4);
+    text-decoration: none;
+    color: black;
+    flex-basis: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
