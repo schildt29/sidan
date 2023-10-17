@@ -1,47 +1,162 @@
-body {
-    margin: 0;
-    background-image: url(Images/backgroundloyle.jpg);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
+@font-face {
+    font-family: "Bungee Shade";
+    src: url("fonts/BungeeShade-Regular.ttf");
+}
 
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("fonts/Barlow_Condensed/BarlowCondensed-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Barlow Semi-condensed";
+    src: url("fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Bungee Outline";
+    src: url("fonts/BungeeOutline-Regular.ttf");
+}
+
+body {
+    font-family: "Barlow Semi-condensed";
+    color: rgb(225, 225, 225);
+}
+
+body>div {
+    background: url(Images/backgroundloyle.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
 }
 
 main {
-    height: 1000px;
+    height: 3000px;
     width: 80vw;
     background-color: rgba(0, 0, 0, 0.4);
     margin: 100px;
-    border-radius: 20px;
+    border-radius: 10px;
+    padding: 0 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 0 auto;
 }
 
-
-header {
-    display: flex;
+h1 {
+    display: block;
     font-size: 64px;
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
     font-weight: bold;
-    align-items: center;
-    justify-content: center;
-
+    padding-top: 16px;
+    font-family: "Bungee Shade";
+    color: rgba(255, 255, 255, 0.7);
 }
 
 nav {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     display: flex;
     height: 60px;
     gap: 8px;
+    text-align: center;
 }
 
-
 nav a {
-    background-color: rgba(181, 179, 179, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
     color: black;
     flex-basis: 0;
     flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 10px;
+    padding: 16px 32px;
+    font-size: 24px;
+}
+
+nav a:nth-child(1):hover,
+nav a:nth-child(3):hover,
+nav a:nth-child(4):hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+nav a:nth-child(2) {
+    border: 1px solid white;
+    font-family: "Barlow Condensed";
+    box-shadow: 0 0 4px 2px white;
+}
+
+section:first-of-type,
+section:last-of-type {
+    border-radius: 20px;
+    border: 2px solid white;
+    padding: 14px;
+}
+
+section:first-of-type>div:first-child,
+section:last-of-type>div:first-child article {
+    display: flex;
+    gap: 1%;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+article p {
+    margin: 40px 0 0 0;
+}
+
+h2 {
+    font-family: "Bungee Outline";
+    font-size: 30px;
+    margin: 0;
+}
+
+h3 {
+    font-family: "Barlow Condensed";
+    font-size: 20px;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+article+div {
+    display: grid;
+    grid-template-columns: 16vw 16vw;
+    grid-template-rows: 16vw 16vw auto;
+    gap: 8px;
+}
+
+article+div>div:first-child {
+    position: relative;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+article+div>div:first-child img {
+    position: absolute;
+    border-radius: 20px 20px 0 0;
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out;
+}
+
+article+div>div:first-child img:nth-child(2):hover {
+    opacity: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
 }
