@@ -1,3 +1,5 @@
+/*Importera alla Fontfaces */
+
 @font-face {
     font-family: "Bungee Shade";
     src: url("fonts/BungeeShade-Regular.ttf");
@@ -17,6 +19,8 @@
     font-family: "Bungee Outline";
     src: url("fonts/BungeeOutline-Regular.ttf");
 }
+
+/* Skapar vår Header, body, background */
 
 body {
     font-family: "Barlow Semi-condensed";
@@ -59,6 +63,8 @@ h1 {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* Vår navigationsbar */
+
 nav {
     margin-bottom: 16px;
     display: flex;
@@ -90,6 +96,8 @@ nav a:nth-child(2) {
     font-family: "Barlow Condensed";
     box-shadow: 0 0 4px 2px white;
 }
+
+/* Övre delen av rutan */
 
 section:first-of-type,
 section:last-of-type {
@@ -147,7 +155,7 @@ article+div>div:first-child img {
     position: absolute;
     border-radius: 20px 20px 0 0;
     opacity: 1;
-    transition: opacity 0.7s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 article+div>div:first-child img:nth-child(2):hover {
@@ -160,3 +168,85 @@ img {
     overflow-clip-margin: content-box;
     overflow: clip;
 }
+
+section:first-of-type article+div div:nth-child(2),
+section:first-of-type article+div div:nth-child(3) {
+    background-color: rgb(172, 229, 255);
+    color: rgba(245, 110, 57, 0.852);
+}
+
+article+div div:nth-child(2) {
+    border-radius: 0 0 0 20px;
+    font-size: 14px;
+}
+
+article+div div:nth-child(3) {
+    border-radius: 0 0 20px 0;
+    font-size: 14px;
+}
+
+article+div p {
+    margin-left: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+article+div ol {
+    padding: 8px;
+    padding-top: 0;
+    margin-left: 24px;
+    margin-top: 0;
+}
+
+/* Nedre delen av rutan, en grid */
+
+section>div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 8px;
+    column-gap: 5px;
+}
+
+section>div:nth-child(2) p {
+    font-size: 14px;
+    margin: 0;
+}
+
+section:first-of-type>div:nth-child(2) div:nth-child(1),
+section:first-of-type>div:nth-child(2) div:nth-child(3),
+section:first-of-type>div:nth-child(2) div:nth-child(5) {
+    color: rgb(172, 229, 255);
+    background-color: rgba(245, 110, 57, 0.852);
+}
+
+section>div:nth-child(2) div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+}
+
+section:first-of-type>div:nth-child(2) div:first-child {
+    border-radius: 20px 0 20px 20px;
+}
+
+section:first-of-type>div:nth-child(2) div:nth-child(3) {
+    grid-column: 3 / 5;
+    border-radius: 20px 20px 20px 0;
+}
+
+section:first-of-type>div:nth-child(2) div:nth-child(4) {
+    background: url(Images/loyle1.jpg);
+    background-size: cover;
+    color: white;
+    border-radius: 0 20px 20px 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+section:first-of-type>div:nth-child(2) div:nth-child(5) {
+    border-radius: 20px 20px 0 20px;
+}
+
+/* Här påbörjas CSS för den nedre delen, dvs LP nummer 2 */
