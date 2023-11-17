@@ -20,11 +20,17 @@
     src: url("fonts/BungeeOutline-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Barlow Semi-Condensed-Light";
+    src: url("fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Light.ttf");
+}
+
 /* Skapar vår Header, body, background */
 
 body {
-    font-family: "Barlow Semi-condensed";
+    font-family: "Barlow Semi-Condensed-Light";
     color: rgb(225, 225, 225);
+    margin: 40px;
 }
 
 body>div {
@@ -43,7 +49,7 @@ main {
     background-color: rgba(0, 0, 0, 0.4);
     margin: 100px;
     border-radius: 10px;
-    padding: 0 19px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -52,7 +58,7 @@ main {
 
 h1 {
     display: block;
-    font-size: 64px;
+    font-size: 72px;
     margin-block-start: 12px;
     margin-block-end: 12px;
     margin-inline-start: 0px;
@@ -75,11 +81,14 @@ nav {
 
 nav a {
     background-color: rgba(255, 255, 255, 0.4);
-    text-decoration: none;
-    color: black;
     flex-basis: 0;
     flex-grow: 1;
+    text-decoration: none;
     border-radius: 10px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 16px 32px;
     font-size: 24px;
 }
@@ -104,6 +113,7 @@ section:last-of-type {
     border-radius: 20px;
     border: 2px solid white;
     padding: 14px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 section:first-of-type>div:first-child,
@@ -239,10 +249,15 @@ section:first-of-type>div:nth-child(2) div:nth-child(3) {
 section:first-of-type>div:nth-child(2) div:nth-child(4) {
     background: url(Images/loyle1.jpg);
     background-size: cover;
+    background-position: center;
     color: white;
     border-radius: 0 20px 20px 20px;
     display: flex;
     align-items: flex-end;
+}
+
+section:first-of-type>div:nth-child(2) div:nth-child(4) p {
+    margin: 0;
 }
 
 section:first-of-type>div:nth-child(2) div:nth-child(5) {
@@ -271,7 +286,7 @@ section:last-of-type>div:nth-child(2) div:nth-child(4) {
     background-color: rgb(175, 58, 39);
 }
 
-#longtext {
+.longtext {
     grid-column: 1 / 3;
     display: flex;
     justify-content: center;
@@ -280,16 +295,21 @@ section:last-of-type>div:nth-child(2) div:nth-child(4) {
     border-radius: 20px 20px 20px 0;
 }
 
-#longpicture {
+.longpicture {
     background: url(Images/loyle2.jpg);
     background-size: cover;
-    background-position: top;
+    background-position: center;
     grid-column: 4 / span 2;
     background-size: cover;
     color: white;
     border-radius: 0 20px 20px 20px;
     display: flex;
     align-items: flex-end;
+    padding: 15px 15px;
+}
+
+.longpicture p {
+    margin: 0;
 }
 
 section:last-of-type>div:nth-child(2) div {
@@ -311,4 +331,114 @@ footer {
     font-size: 16px;
     padding: 16px 3px;
     margin-top: 16px;
+}
+
+@media (max-width: 500px) {
+
+    body>div {
+        background-image: url(Images/backgroundloyle.jpg);
+        background-position: center;
+    }
+
+    body {
+        --font_size: 3.5vw;
+        margin: 0;
+    }
+
+    main {
+        width: auto;
+        padding: 0 4vw;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 16vw;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+
+    nav a {
+        padding: 16px 0;
+        font-size: 16vw;
+    }
+
+    section:first-of-type>div:first-child,
+    section:last-of-type>div:first-child {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    article {
+        margin: 16px 0;
+    }
+
+    article+div {
+        grid-template-columns: 42vw 42vw;
+        grid-template-rows: 42vw 42vw auto;
+        gap: 1.5vw;
+    }
+
+    section>div:nth-child(2) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1vw;
+    }
+
+    section:first-of-type>div:nth-child(2) div:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    section:first-of-type>div:nth-child(2) div:nth-child(3) {
+        grid-column: 2 / span 2;
+        grid-row: 1;
+    }
+
+    section:last-of-type>div:nth-child(2) div:nth-child(3) {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+}
+
+@media (800px <=width <=900px) {
+    body {
+        --font_size: 14px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+@media (900px < width < 1200px) {
+
+    body {
+        --font_size: 1.5vw;
+    }
+}
+
+@media (width >=1200px) {
+
+    main {
+        width: 1080px;
+    }
+
+    article+div {
+        grid-template-columns: 210px 210px;
+        grid-template-rows: 210px 210px auto;
+        gap: 10px;
+    }
+
 }
